@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
 body{
     margin: 0;
@@ -54,8 +55,7 @@ body{
     }
     &__item{
         background-color: #F6F6F6;
-        display: flex;
-        justify-content: space-evenly;
+        display: flex;        
         align-items: center;
         width: 80%;
         margin: 10px auto;
@@ -68,13 +68,15 @@ body{
                 padding: 5px 10px;
                 color: #FFFFFF;
                 background-color: #9356DC;
-                margin-left: -60px;
+                margin-left: -35px;
+                margin-right: 20px;
                 font-size: 15px;
             }
 
             .fct-icon{
                 font-size: 20px;
                 color: #808080;
+                margin-right: 30px;
             }
     }
 
@@ -85,3 +87,78 @@ body{
         }
     }
 }
+
+.restaurants{
+        background-color: #F6F6F6;
+        display: flex;
+        flex-direction: column;        
+        margin-top: 50px;
+        padding-bottom: 75px;
+        align-items: center;
+            a{
+                text-decoration: none;
+            }
+            h1{
+                align-self: baseline;
+                margin: 50px 0 20px 30px;
+            }
+            &__item{               
+                background-color: #FFFFFF;
+                border-radius:20px;                                   
+                        img{
+                            width: auto;
+                            height: 220px;
+                            border-radius: 20px 20px 0 0;                      
+                        }  
+                        h3{
+                            color: #000000;
+                            font-size: 20px;
+                            
+                        } 
+                        p{
+                            color: #000000;
+                            font-size: 20px;
+                        }  
+                        .description{
+                            display: flex;
+                            flex-direction: column;
+                        }   
+            }
+}
+footer{
+    background-color: #353535;  
+        *{
+            color: #FFFFFF;
+        }
+
+        h1{  
+            font-family: "Shrikhand";         
+            padding: 20px 30px; 
+            margin: 0;          
+        }  
+        
+        .links{
+            margin-left: 30px;
+                &__item{
+                    padding-bottom: 10px;
+                }
+                i{                    
+                    padding-right: 15px;
+                }
+        }
+    
+    }
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
