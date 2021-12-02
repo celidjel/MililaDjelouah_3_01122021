@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 body {
   margin: 0;
   font-family: "Roboto";
@@ -53,7 +54,6 @@ body {
 .fonctionnement__item {
   background-color: #F6F6F6;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   width: 80%;
   margin: 10px auto;
@@ -67,18 +67,78 @@ body {
   padding: 5px 10px;
   color: #FFFFFF;
   background-color: #9356DC;
-  margin-left: -60px;
+  margin-left: -35px;
+  margin-right: 20px;
   font-size: 15px;
 }
 .fonctionnement__item .fct-icon {
   font-size: 20px;
   color: #808080;
+  margin-right: 30px;
 }
 .fonctionnement__item:hover {
   background-color: #F5EDFF;
 }
 .fonctionnement__item:hover .fct-icon {
   color: #9356DC;
+}
+
+.restaurants {
+  background-color: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  padding-bottom: 75px;
+  align-items: center;
+}
+.restaurants a {
+  text-decoration: none;
+}
+.restaurants h1 {
+  align-self: baseline;
+  margin: 50px 0 20px 30px;
+}
+.restaurants__item {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+}
+.restaurants__item img {
+  width: auto;
+  height: 220px;
+  border-radius: 20px 20px 0 0;
+}
+.restaurants__item h3 {
+  color: #000000;
+  font-size: 20px;
+}
+.restaurants__item p {
+  color: #000000;
+  font-size: 20px;
+}
+.restaurants__item .description {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  background-color: #353535;
+}
+footer * {
+  color: #FFFFFF;
+}
+footer h1 {
+  font-family: "Shrikhand";
+  padding: 20px 30px;
+  margin: 0;
+}
+footer .links {
+  margin-left: 30px;
+}
+footer .links__item {
+  padding-bottom: 10px;
+}
+footer .links i {
+  padding-right: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
