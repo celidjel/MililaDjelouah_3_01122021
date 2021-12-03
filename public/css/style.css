@@ -101,6 +101,8 @@ body {
 .restaurants__item {
   background-color: #FFFFFF;
   border-radius: 20px;
+  margin-bottom: 20px;
+  position: relative;
 }
 .restaurants__item img {
   width: auto;
@@ -110,14 +112,65 @@ body {
 .restaurants__item h3 {
   color: #000000;
   font-size: 20px;
+  margin: 0 0 0 10px;
 }
 .restaurants__item p {
   color: #000000;
   font-size: 20px;
+  margin: 0 0 20px 10px;
+}
+.restaurants__item .fa-heart {
+  color: red;
+}
+.restaurants__item .fa-heart:active > .progress-bar {
+  animation: progress__bar 2000ms;
+}
+@keyframes progress-bar {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.restaurants__item .new {
+  background-color: #99E2D0;
+  color: #018766;
+  padding: 5px 10px;
+  width: 65px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 20px;
+  border-radius: 5px;
 }
 .restaurants__item .description {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.restaurants__item .description__texte {
+  width: 80%;
+}
+.restaurants__item .description__coeur {
+  width: 20%;
+  margin-bottom: 20px;
+}
+.restaurants__item .description__coeur i {
+  font-size: 20px;
+  color: #000000;
+  opacity: 1;
+  font-weight: 300;
+}
+.restaurants__item .description__coeur i::before {
+  bottom: 0;
+  top: 0;
+  transition: all 0.5s linear;
+}
+.restaurants__item .description__coeur i:hover::before {
+  font-weight: bold;
+  color: #9356DC;
+  top: 100%;
 }
 
 footer {
