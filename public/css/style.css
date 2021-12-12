@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 body {
-  margin: 0;
+  margin: 0 auto;
   font-family: "Roboto";
+  max-width: 1600px;
 }
 
 .logo {
@@ -93,6 +94,10 @@ body {
 }
 .restaurants a {
   text-decoration: none;
+  transition: transform 0.5s ease-in-out;
+}
+.restaurants a:hover {
+  transform: scale(1.05);
 }
 .restaurants h1 {
   align-self: baseline;
@@ -101,12 +106,13 @@ body {
 .restaurants__item {
   background-color: #FFFFFF;
   border-radius: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
+  max-width: 420px;
   position: relative;
 }
 .restaurants__item img {
-  width: auto;
-  height: 220px;
+  width: 100%;
+  height: auto;
   border-radius: 20px 20px 0 0;
 }
 .restaurants__item h3 {
@@ -118,20 +124,6 @@ body {
   color: #000000;
   font-size: 20px;
   margin: 0 0 20px 10px;
-}
-.restaurants__item .fa-heart {
-  color: red;
-}
-.restaurants__item .fa-heart:active > .progress-bar {
-  animation: progress__bar 2000ms;
-}
-@keyframes progress-bar {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
 }
 .restaurants__item .new {
   background-color: #99E2D0;
@@ -165,7 +157,7 @@ body {
 .restaurants__item .description__coeur i::before {
   bottom: 0;
   top: 0;
-  transition: all 0.5s linear;
+  transition: transform 1s linear;
 }
 .restaurants__item .description__coeur i:hover::before {
   font-weight: bold;
@@ -190,8 +182,202 @@ footer .links {
 footer .links__item {
   padding-bottom: 10px;
 }
+footer .links__item a {
+  text-decoration: none;
+}
 footer .links i {
   padding-right: 15px;
+}
+
+.restaurant-header {
+  display: flex;
+  align-items: center;
+}
+.restaurant-header .back {
+  font-size: 24px;
+  margin-left: 30px;
+  width: 15%;
+}
+.restaurant-header--logo {
+  width: 55%;
+}
+
+.main {
+  background-color: #F6F6F6;
+  padding-bottom: 50px;
+}
+.main__image {
+  width: 100%;
+}
+.main__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F6F6F6;
+  margin: -32px 0 0 0;
+  padding-bottom: 20px;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+}
+.main__content .title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.main__content .title h1 {
+  font-family: "Shrikhand";
+}
+.main__content .title .coeur {
+  cursor: pointer;
+}
+.main__content .title .coeur i {
+  font-size: 20px;
+  color: #000000;
+  opacity: 1;
+  font-weight: 300;
+}
+.main__content .title .coeur i::before {
+  bottom: 0;
+  top: 0;
+  transition: all 0.5s linear;
+}
+.main__content .title .coeur i:hover::before {
+  font-weight: bold;
+  color: #9356DC;
+  top: 100%;
+}
+.main__content h1 {
+  width: 80%;
+}
+.main .menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.main .menu__title {
+  margin-left: 20px;
+  border-bottom: solid 3px #99E2D0;
+  padding-bottom: 5px;
+  width: 10%;
+}
+.main .menu__entree, .main .menu__plat, .main .menu__dessert {
+  color: #000000;
+}
+.main .menu__entree a, .main .menu__plat a, .main .menu__dessert a {
+  text-decoration: none;
+}
+.main .menu__entree .plat, .main .menu__plat .plat, .main .menu__dessert .plat {
+  display: flex;
+  background-color: white;
+  color: black;
+  margin: 20px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.main .menu__entree .plat .item, .main .menu__plat .plat .item, .main .menu__dessert .plat .item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 10px;
+}
+.main .menu__entree .plat .item h3, .main .menu__plat .plat .item h3, .main .menu__dessert .plat .item h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.main .menu__entree .plat .item__description, .main .menu__plat .plat .item__description, .main .menu__dessert .plat .item__description {
+  width: 90%;
+}
+.main .menu__entree .plat .item__description p, .main .menu__plat .plat .item__description p, .main .menu__dessert .plat .item__description p {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  align-self: end;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main .menu__entree .plat .item__plat, .main .menu__plat .plat .item__plat, .main .menu__dessert .plat .item__plat {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.main .menu__entree .plat .item__plat p, .main .menu__plat .plat .item__plat p, .main .menu__dessert .plat .item__plat p {
+  font-size: 12px;
+  margin: 5px 5px 0 0;
+  max-width: 85%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 65px;
+}
+.main .menu__entree .plat .item__plat span, .main .menu__plat .plat .item__plat span, .main .menu__dessert .plat .item__plat span {
+  font-weight: bold;
+  width: 10%;
+  margin-right: 5px;
+  position: absolute;
+  right: 10px;
+}
+.main .menu__entree .plat:hover .slide-left, .main .menu__plat .plat:hover .slide-left, .main .menu__dessert .plat:hover .slide-left {
+  transition: 1s;
+  right: 0;
+}
+.main .menu__entree .plat .slide-left, .main .menu__plat .plat .slide-left, .main .menu__dessert .plat .slide-left {
+  position: absolute;
+  right: -70px;
+  width: 50px;
+  height: 40px;
+  background-color: #99E2D0;
+  border-radius: 0 20px 20px 0;
+  align-self: center;
+  padding: 15px 10px;
+  transition: 1s;
+}
+.main .commander {
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 10px 5px;
+  margin: 0 auto;
+  display: block;
+  width: 200px;
+  text-align: center;
+}
+
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px);
+  }
+}
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px);
+  }
+}
+@media (min-width: 992px) {
+  .main .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .main .menu__entree .plat, .main .menu__plat .plat, .main .menu__dessert .plat {
+    min-width: 300px;
+    max-width: 300px;
+  }
+  .main__content .title h1 {
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
