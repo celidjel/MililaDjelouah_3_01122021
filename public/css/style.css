@@ -8,6 +8,8 @@ body {
   opacity: 0.4;
   -webkit-animation: montrer 1s ease-out both;
   -webkit-animation-delay: 3s;
+  animation: montrer 1s ease-out both;
+  animation-delay: 3s;
 }
 
 .loader {
