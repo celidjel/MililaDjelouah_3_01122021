@@ -4,20 +4,24 @@
 body{
     margin: 0 auto;
     font-family: "Roboto";
-    max-width: 1600px;   
+    max-width: 1600px;      
+} 
+
+.accueil{
     pointer-events: none;
-    opacity: 0.4; 
+    opacity: 0.1; 
     -webkit-animation: montrer 1s ease-out both;
     -webkit-animation-delay: 3s;   
     animation: montrer 1s ease-out both;
     animation-delay: 3s;  
-} 
+}
 
 .loader{  
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
+    opacity: 0.9;
     top:0;
     bottom: 0;
     left: 0;
@@ -135,8 +139,16 @@ body{
     }
 }
 
-.restaurants{
-        background-color: #F6F6F6;
+.liste-restaurants{
+    background-color: #F6F6F6;
+    h1{
+        align-self: baseline;
+        margin: 50px 0 20px 30px;
+        padding-top: 20px;
+    }
+}
+
+.restaurants{       
         display: flex;
         flex-direction: column;        
         margin-top: 50px;
@@ -149,10 +161,7 @@ body{
                         transform: scale(1.05); 
                     }
             }
-            h1{
-                align-self: baseline;
-                margin: 50px 0 20px 30px;
-            }
+           
             &__item{               
                 background-color: #FFFFFF;
                 border-radius:20px;   
@@ -263,6 +272,8 @@ footer{
     padding-bottom: 50px;   
     &__image{
         width: 100%;
+        height: 300px;
+        object-fit: cover;
     }
 
     &__content{
@@ -283,7 +294,8 @@ footer{
                         font-family: "Shrikhand";
                     }
                     .coeur{                       
-                        cursor: pointer;                                  
+                        cursor: pointer;  
+                        margin-right: 20px;                                
                             i{
                                 font-size: 20px;                                   
                                  color: #000000;
@@ -306,7 +318,8 @@ footer{
                           
             }
             h1{
-                width: 80%;
+                width: 100%;
+                margin-left: 20px;
             }
     }
     .menu{
@@ -337,12 +350,19 @@ footer{
                         .item{   
                             width: 100%;  
                             display: flex;
+                            justify-content: space-between;
                             flex-direction: column;          
-                            padding: 15px 10px;                                         
-                                h3{
+                            padding: 15px 10px;    
+                            overflow: hidden;  
+                                .recette{
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;                               
                                     margin: 0;
+                                    margin-right: 8px;                               
                                     font-size: 16px;
-                                }  
+                                    font-weight: bold;
+                                }                               
     
                                 &__description{
                                     width: 90%;
@@ -359,40 +379,39 @@ footer{
                                 &__plat{                                  
                                     display: flex;                                      
                                     width: 100%;  
-                                    position: relative;                                                                  
-                                        p{                                            
-                                            font-size: 12px;
-                                            margin: 5px 5px 0 0;    
-                                            max-width: 85%;
+                                    justify-content: space-between;  
+                                        .nom{
                                             white-space: nowrap;
                                             overflow: hidden;
-                                            text-overflow: ellipsis;                                   
-                                            margin-right: 65px;
-                                        }
-                                        span{
+                                            text-overflow: ellipsis;
+                                            font-size: 16px;
+                                            margin: 5px 5px 0 0;
+                                        }   
+                                        
+                                        .prix{
                                             font-weight: bold;
-                                            width: 10%;
-                                            margin-right: 5px;
-                                            position: absolute;
-                                            right: 10px;
-                                        }
+                                            margin: 5px 5px 0 0;
+                                            font-size: 16px;
+                                        }                                      
                                 }                                                               
                                
                         }
                         &:hover .slide-left{                                    
                             transition: 1s;
                             right: 0;  
+                            margin-right: 0px !important;
                                 .rotate-center{
                                     -webkit-animation: rotate-center 0.6s ease-in-out both;
                                     animation: rotate-center 0.6s ease-in-out both;
                                 }                                                  
-                        }                         
+                        }                                            
                         
                         .slide-left {   
-                            position: absolute;
+                            // position: absolute;
                             right: -70px;                    
                             width: 50px;
-                            height: 40px;
+                            margin-right: -70px;
+                            height: 45px;
                             background-color: #99E2D0;                       
                             border-radius: 0 20px 20px 0;
                             align-self: center;                                                  
@@ -436,14 +455,14 @@ footer{
                       max-width: 300px;
                   }
               }
-        }
-        &__content{
-            .title{
-                h1{
-                    text-align: center;
-                }
-            }
-        }
+        }          
+    }
+
+    .restaurants{
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 0 0 50%;
+        justify-content: space-evenly;
     }
   }
 

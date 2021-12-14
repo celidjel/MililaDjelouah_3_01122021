@@ -4,8 +4,11 @@ body {
   margin: 0 auto;
   font-family: "Roboto";
   max-width: 1600px;
+}
+
+.accueil {
   pointer-events: none;
-  opacity: 0.4;
+  opacity: 0.1;
   -webkit-animation: montrer 1s ease-out both;
   -webkit-animation-delay: 3s;
   animation: montrer 1s ease-out both;
@@ -17,6 +20,7 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
+  opacity: 0.9;
   top: 0;
   bottom: 0;
   left: 0;
@@ -127,8 +131,16 @@ body {
   color: #9356DC;
 }
 
-.restaurants {
+.liste-restaurants {
   background-color: #F6F6F6;
+}
+.liste-restaurants h1 {
+  align-self: baseline;
+  margin: 50px 0 20px 30px;
+  padding-top: 20px;
+}
+
+.restaurants {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
@@ -141,10 +153,6 @@ body {
 }
 .restaurants a:hover {
   transform: scale(1.05);
-}
-.restaurants h1 {
-  align-self: baseline;
-  margin: 50px 0 20px 30px;
 }
 .restaurants__item {
   background-color: #FFFFFF;
@@ -251,6 +259,8 @@ footer .links i {
 }
 .main__image {
   width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 .main__content {
   display: flex;
@@ -273,6 +283,7 @@ footer .links i {
 }
 .main__content .title .coeur {
   cursor: pointer;
+  margin-right: 20px;
 }
 .main__content .title .coeur i {
   font-size: 20px;
@@ -291,7 +302,8 @@ footer .links i {
   top: 100%;
 }
 .main__content h1 {
-  width: 80%;
+  width: 100%;
+  margin-left: 20px;
 }
 .main .menu {
   display: flex;
@@ -322,12 +334,19 @@ footer .links i {
 .main .menu__entree .plat .item, .main .menu__plat .plat .item, .main .menu__dessert .plat .item {
   width: 100%;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   padding: 15px 10px;
+  overflow: hidden;
 }
-.main .menu__entree .plat .item h3, .main .menu__plat .plat .item h3, .main .menu__dessert .plat .item h3 {
+.main .menu__entree .plat .item .recette, .main .menu__plat .plat .item .recette, .main .menu__dessert .plat .item .recette {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin: 0;
+  margin-right: 8px;
   font-size: 16px;
+  font-weight: bold;
 }
 .main .menu__entree .plat .item__description, .main .menu__plat .plat .item__description, .main .menu__dessert .plat .item__description {
   width: 90%;
@@ -343,37 +362,34 @@ footer .links i {
 .main .menu__entree .plat .item__plat, .main .menu__plat .plat .item__plat, .main .menu__dessert .plat .item__plat {
   display: flex;
   width: 100%;
-  position: relative;
+  justify-content: space-between;
 }
-.main .menu__entree .plat .item__plat p, .main .menu__plat .plat .item__plat p, .main .menu__dessert .plat .item__plat p {
-  font-size: 12px;
-  margin: 5px 5px 0 0;
-  max-width: 85%;
+.main .menu__entree .plat .item__plat .nom, .main .menu__plat .plat .item__plat .nom, .main .menu__dessert .plat .item__plat .nom {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-right: 65px;
+  font-size: 16px;
+  margin: 5px 5px 0 0;
 }
-.main .menu__entree .plat .item__plat span, .main .menu__plat .plat .item__plat span, .main .menu__dessert .plat .item__plat span {
+.main .menu__entree .plat .item__plat .prix, .main .menu__plat .plat .item__plat .prix, .main .menu__dessert .plat .item__plat .prix {
   font-weight: bold;
-  width: 10%;
-  margin-right: 5px;
-  position: absolute;
-  right: 10px;
+  margin: 5px 5px 0 0;
+  font-size: 16px;
 }
 .main .menu__entree .plat:hover .slide-left, .main .menu__plat .plat:hover .slide-left, .main .menu__dessert .plat:hover .slide-left {
   transition: 1s;
   right: 0;
+  margin-right: 0px !important;
 }
 .main .menu__entree .plat:hover .slide-left .rotate-center, .main .menu__plat .plat:hover .slide-left .rotate-center, .main .menu__dessert .plat:hover .slide-left .rotate-center {
   -webkit-animation: rotate-center 0.6s ease-in-out both;
   animation: rotate-center 0.6s ease-in-out both;
 }
 .main .menu__entree .plat .slide-left, .main .menu__plat .plat .slide-left, .main .menu__dessert .plat .slide-left {
-  position: absolute;
   right: -70px;
   width: 50px;
-  height: 40px;
+  margin-right: -70px;
+  height: 45px;
   background-color: #99E2D0;
   border-radius: 0 20px 20px 0;
   align-self: center;
@@ -408,8 +424,12 @@ footer .links i {
     min-width: 300px;
     max-width: 300px;
   }
-  .main__content .title h1 {
-    text-align: center;
+
+  .restaurants {
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 0 50%;
+    justify-content: space-evenly;
   }
 }
 @-webkit-keyframes rotate-center {
