@@ -1,19 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
+$primary:#9356DC;
+$secondary: #FF79DA;
+
+@mixin button-lightness($color1, $color2){
+    $colour1: lighten($color1, 10%); 
+    $colour2: lighten($color2, 10%);
+
+   background:  linear-gradient($colour1, $colour2);
+}
+
 body{
     margin: 0 auto;
     font-family: "Roboto";
     max-width: 1600px;      
 } 
 
-.accueil{
-    pointer-events: none;
+.tilt-in-top-1 {
+	-webkit-animation: tilt-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: tilt-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.tilt-in-top-2{
+	-webkit-animation: tilt-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: tilt-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation-delay: 0.5s;
+}
+.tilt-in-top-3{
+	-webkit-animation: tilt-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: tilt-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation-delay: 1s;
+}
+
+.accueil{   
     opacity: 0.1; 
+    pointer-events: none;
     -webkit-animation: montrer 1s ease-out both;
     -webkit-animation-delay: 3s;   
     animation: montrer 1s ease-out both;
     animation-delay: 3s;  
+    background: #F5EDFF;
 }
 
 .loader{  
@@ -38,7 +64,7 @@ body{
             position: absolute;            
             animation: spin 1s ease-in-out infinite;
                 &:nth-child(1){
-                    border-top: 2px solid #9356DC;
+                    border-top: 2px solid $primary;
                 }
 
                 &:nth-child(2){
@@ -86,7 +112,7 @@ body{
         background-color: #F6F6F6;
         padding: 20px 10px;
         .explorer{
-            background: linear-gradient(#FF79DA, #9356DC); 
+            background: linear-gradient($primary, $secondary); 
             color: white;
             text-decoration: none;
             border-radius: 30px;
@@ -94,6 +120,10 @@ body{
             margin: 30px auto;
             display: block;
             width: 200px;
+                &:hover{
+                    @include button-lightness($primary, $secondary);
+                    box-shadow: 1px 5px 10px #808080;
+                }
         }
     }    
 }
@@ -155,11 +185,7 @@ body{
         padding-bottom: 75px;
         align-items: center;
             a{
-                text-decoration: none;
-                transition: transform 0.5s ease-in-out;                
-                    &:hover{
-                        transform: scale(1.05); 
-                    }
+                text-decoration: none;               
             }
            
             &__item{               
@@ -197,36 +223,58 @@ body{
                         }
 
                         .description{
-                            display: flex;  
-                            width: 100%;  
-                            align-items: center; 
+                            display: flex;
+                            width: 100%;
+                            align-items: center;
+                            justify-content: space-between;
                                 &__texte{
-                                    width: 80%;
-                                }   
-                                &__coeur{
-                                    width: 20%;
-                                    margin-bottom: 20px;                                    
-                                        i{
-                                            font-size: 20px;                                   
-                                             color: #000000;
-                                             opacity: 1;
-                                             font-weight: 300;
-                                                &::before{                        
-                                                    bottom:0;
-                                                    top:0;                            
-                                                    transition: transform 1s linear;                                                 
-                                                }                                                 
-                                                &:hover::before{
-                                                    font-weight: bold;
-                                                    color: #9356DC; 
-                                                    top: 100%;                                                  
-                                                }    
-                                                                                         
-                                        }
-                                }                    
+                                    margin: 20px;
+                                }                                                
                         }   
             }
 }
+
+.description__coeur{
+    margin: 0px 20px 20px 0px;
+    fill: transparent;
+    stroke: #000000;
+    stroke-width: 20;
+    cursor: pointer;
+    position: relative;
+        svg{
+            overflow: visible;
+            width: 30px;
+                path {
+                    stroke-dashoffset: 0;
+                    stroke-dasharray: 1550;
+                    transform-origin: center;
+                }
+        }
+
+        .coeur-background{
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            stroke: none;
+        }
+
+        .coeur-main{
+            &:hover path{
+                animation: coeur-animation 2s ease-in-out forwards;
+            }
+
+            &:hover ~ .coeur-background path{
+                animation: coeur-pop 2s ease-in-out forwards;
+            }
+        }  
+        
+        &--menu{
+            margin-bottom: 0px;
+        }
+}      
+
+
 footer{
     background-color: #353535;  
         *{
@@ -292,30 +340,7 @@ footer{
                 justify-content: center;
                     h1{
                         font-family: "Shrikhand";
-                    }
-                    .coeur{                       
-                        cursor: pointer;  
-                        margin-right: 20px;                                
-                            i{
-                                font-size: 20px;                                   
-                                 color: #000000;
-                                 opacity: 1;
-                                 font-weight: 300;
-                                    &::before{                        
-                                        bottom:0;
-                                        top:0;                            
-                                        transition: all 0.5s linear;                                                 
-                                    }                                                 
-                                    &:hover::before{
-                                        font-weight: bold;
-                                        color: #9356DC; 
-                                        top: 100%;                                                  
-                                    }    
-                                                                             
-                            }
-                    }  
-            
-                          
+                    }           
             }
             h1{
                 width: 100%;
@@ -431,7 +456,7 @@ footer{
             }
     }
     .commander{
-        background: linear-gradient(#FF79DA, #9356DC);
+        background: linear-gradient($primary, $secondary);
         color: white;
         text-decoration: none;
         border-radius: 30px;
@@ -440,6 +465,11 @@ footer{
         display: block;
         width: 200px;
         text-align: center;
+            &:hover{
+                @include button-lightness($primary, $secondary);
+                 box-shadow: 1px 5px 10px #808080;
+
+            }
     }  
 }
 
@@ -458,13 +488,30 @@ footer{
         }          
     }
 
+    .main__content{
+        .title{      
+            width: auto;      
+            gap: 725px;
+                h1{
+                    white-space: nowrap;
+                }
+        }
+    }
+
     .restaurants{
         flex-direction: row;
-        flex-wrap: wrap;
-        flex: 0 0 50%;
-        justify-content: space-evenly;
+        flex-wrap: wrap;       
+        justify-content: center;
     }
-  }
+
+    footer{
+        .links{
+            display: flex;
+            justify-content: space-between;
+            padding-right: 30px;
+        }
+    }
+  } 
 
 // keyframe check
   @-webkit-keyframes rotate-center {
@@ -519,7 +566,8 @@ footer{
       opacity: 0.4;
     }    
     100%{
-      opacity: 1; 
+      opacity: 1;  
+      background: #FFFFFF;  
       pointer-events: all;
     }
   }
@@ -530,8 +578,81 @@ footer{
     }    
     100%{
       opacity: 1; 
-      pointer-events: all;
+      background: #FFFFFF;  
+      pointer-events: all;   
     }
   }
+
+ 
+ @-webkit-keyframes tilt-in-top{
+    0% {
+      -webkit-transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+              transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+              transform: rotateY(0deg) translateY(0) skewY(0deg);
+      opacity: 1;
+    }
+  }
+  @keyframes tilt-in-top{
+    0% {
+      -webkit-transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+              transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+              transform: rotateY(0deg) translateY(0) skewY(0deg);
+      opacity: 1;
+    }
+  }
+
+
+
+
+  @keyframes coeur-animation {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    30% {
+      stroke-dashoffset: 1550;
+    }
+    60% {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: $primary;
+      stroke: $primary;
+      transform: scale(1.1);
+    }
+    90% {
+      transform: scale(1);
+    }
+    100% {
+      stroke-dashoffset: 3100;
+      fill: $secondary;
+      stroke: $secondary;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
