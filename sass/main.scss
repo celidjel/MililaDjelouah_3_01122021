@@ -171,7 +171,7 @@ body{
 
 .liste-restaurants{
     background-color: #F6F6F6;
-    h1{
+    h2{        
         align-self: baseline;
         margin: 50px 0 20px 30px;
         padding-top: 20px;
@@ -181,7 +181,7 @@ body{
 .restaurants{       
         display: flex;
         flex-direction: column;        
-        margin-top: 50px;
+        margin-top: 30px;
         padding-bottom: 75px;
         align-items: center;
             a{
@@ -338,11 +338,11 @@ footer{
                 width: 100%;
                 align-items: center;
                 justify-content: center;
-                    h1{
+                    h2{
                         font-family: "Shrikhand";
                     }           
             }
-            h1{
+            h2{
                 width: 100%;
                 margin-left: 20px;
             }
@@ -492,7 +492,7 @@ footer{
         .title{      
             width: auto;      
             gap: 725px;
-                h1{
+                h2{
                     white-space: nowrap;
                 }
         }
