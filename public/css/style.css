@@ -242,9 +242,6 @@ body {
 .description__coeur .coeur-main:hover path {
   animation: coeur-animation 2s ease-in-out forwards;
 }
-.description__coeur .coeur-main:hover ~ .coeur-background path {
-  animation: coeur-pop 2s ease-in-out forwards;
-}
 .description__coeur--menu {
   margin-bottom: 0px;
 }
@@ -480,6 +477,14 @@ footer .links i {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
   }
 }
 @keyframes spin {
