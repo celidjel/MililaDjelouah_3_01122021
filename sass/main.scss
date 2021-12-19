@@ -3,6 +3,7 @@
 
 $primary:#9356DC;
 $secondary: #FF79DA;
+$tertiary: #99E2D0;
 
 @mixin button-lightness($color1, $color2){
     $colour1: lighten($color1, 10%); 
@@ -68,13 +69,13 @@ body{
                 }
 
                 &:nth-child(2){
-                    border-bottom: 2px solid #FF79DA;
+                    border-bottom: 2px solid $secondary;
                     width: 120px;
                     height: 120px;
                 }
 
                 &:nth-child(3){
-                    border-left: 2px solid #99E2D0;
+                    border-left: 2px solid $tertiary;
                     width: 180px;
                     height: 180px;
                 }
@@ -262,11 +263,7 @@ body{
         .coeur-main{
             &:hover path{
                 animation: coeur-animation 2s ease-in-out forwards;
-            }
-
-            &:hover ~ .coeur-background path{
-                animation: coeur-pop 2s ease-in-out forwards;
-            }
+            }            
         }  
         
         &--menu{
@@ -431,8 +428,7 @@ footer{
                                 }                                                  
                         }                                            
                         
-                        .slide-left {   
-                            // position: absolute;
+                        .slide-left {                             
                             right: -70px;                    
                             width: 50px;
                             margin-right: -70px;
@@ -513,7 +509,7 @@ footer{
     }
   } 
 
-// keyframe check
+
   @-webkit-keyframes rotate-center {
     0% {
       -webkit-transform: rotate(0);
@@ -535,7 +531,12 @@ footer{
     }
   }
 
-//   keyframe loader
+
+@-webkit-keyframes spin{
+    from{transform: rotate(0deg)}
+    to{transform: rotate(720deg)}
+}
+
 @keyframes spin{
     from{transform: rotate(0deg)}
     to{transform: rotate(720deg)}
@@ -596,6 +597,7 @@ footer{
       opacity: 1;
     }
   }
+
   @keyframes tilt-in-top{
     0% {
       -webkit-transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
@@ -608,9 +610,6 @@ footer{
       opacity: 1;
     }
   }
-
-
-
 
   @keyframes coeur-animation {
     0% {
