@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="public/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<title>ohmyfood</title>
+</head>
+<body class="accueil">
+	<div class="loader">
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+	</div>	
+	<header>
+		<div class="logo">
+			<a href="accueil.html">
+				<img src="public/img/logo/ohmyfood.png" alt="ohmyfood logo">
+			</a>
+		</div>
+	</header>
+
+	<main>
+		<div class="informations">
+			<div class="informations__localisation">
+				<i class="fas fa-map-marker-alt loc-icon"></i>
+				<span> Paris, Belleville</span>
+			</div>
+			<div class="informations__restaurant">
+				<h1>Réservez le menu qui vous convient</h1>
+				<p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+				<a class="explorer" href="#restaurants">Explorer nos restaurants</a>
+			</div>
+			
+		</div>
+
+		<nav class="fonctionnement">
+			<h1>Fonctionnement</h1>
+
+			<a href="#">
+				<div class="fonctionnement__item">
+					<div class="numero">1</div>
+					<i class="fas fa-mobile-alt fct-icon"></i>
+					<span>Choisissez un restaurant</span>
+				</div>
+			</a>
+			<a href="#">
+				<div class="fonctionnement__item">
+					<div class="numero">2</div>
+					<i class="fas fa-list-ul fct-icon"></i>
+					<span>Composez votre menu</span>				
+				</div>
+			</a>
+			<a href="#">
+				<div class="fonctionnement__item">
+					<div class="numero">3</div>
+					<i class="fas fa-store fct-icon"></i>	
+					<span>Dégustez au restaurant</span>
+				</div>
+			</a>		
+
+		</nav>
+
+		<section class="liste-restaurants" id="restaurants">
+			<h1>Restaurants</h1>		
+			<div class="restaurants">
+				<a href="palette-gout.html">
+					<div class="restaurants__item"> 
+						<img src="public/img/restaurants/wennington.jpg" alt="La palette du goût"> 
+						<div class="new">Nouveau</div>  
+						<div class="description">
+							<div class="description__texte">
+								<h3>La palette du goût</h3>
+								<p>Ménilmontant</p>
+							</div> 
+
+							<div class="description__coeur">
+								<svg class="coeur-main" viewBox="0 0 512 512" title="heart">
+								  <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+								</svg>
+								<svg class="coeur-background" viewBox="0 0 512 512" title="heart">
+								  <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+								</svg>
+							</div>						
+						</div>                       
+					</div>
+				</a>	
+
+				<a href="noteenchantee.html">
+					<div class="restaurants__item">   
+
+						<img src="public/img/restaurants/stil.jpg" alt="La note enchantée">
+						<div class="new">Nouveau</div>      
+						
+						<div class="description">
+							<div class="description__texte">
+								<h3>La note enchantée</h3>
+								<p>Charone</p>
+							</div> 
+
+							<div class="description__coeur">
+								<svg class="coeur-main" viewBox="0 0 512 512" title="heart">
+								  <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+								</svg>
+								<svg class="coeur-background" viewBox="0 0 512 512" title="heart">
+								  <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+								</svg>
+							</div>
+						</div>   
+                         
+					</div>
+				</a>
+				
+				<a href="lafrancaise.html">
+					<div class="restaurants__item">   
+
+						<img src="public/img/restaurants/heftiba.jpg" alt="À la française"> 
+						<div class="description">
+							<div class="description__texte">
+								<h3>À la française</h3>
+								<p>Cité Rouge</p>
+							</div> 
+
+							<div class="description__coeur">
+								<svg class="coeur-main" viewBox="0 0 512 512" title="heart">
+								  <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+								</svg>
+								<svg class="coeur-background" viewBox="0 0 512 512" title="heart">
+								  <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+								</svg>
+							</div> 
+						</div>                        
+					</div>
+				</a>
+			
+				<a href="delice.html">
+					<div class="restaurants__item">   
+
+						<img src="public/img/restaurants/louis-hansel.jpg" alt="Le délice des sens"> 
+						<div class="description">
+							<div class="description__texte">
+								<h3>Le délice des sens</h3>
+								<p>Folie-Méricourt</p>
+							</div> 
+
+							<div class="description__coeur">
+								<svg class="coeur-main" viewBox="0 0 512 512" title="heart">
+								  <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+								</svg>
+								<svg class="coeur-background" viewBox="0 0 512 512" title="heart">
+								  <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+								</svg>
+							</div>
+						</div>                     
+							                            
+					</div>
+				</a>
+			</div>
+				
+		</section>
+
+
+	</main>
+	<footer>
+		<h1>ohmyfood</h1>	
+			<div class="links">
+				<div class="links__item">
+					<i class="fas fa-utensils fa-fw"></i>
+					<a href="#">Proposer un restaurant</a>
+				</div>
+				<div  class="links__item">
+					<i class="fas fa-hands-helping fa-fw"></i>
+					<a href="#">Devenir partenaire</a>
+				</div>
+				<div class="links__item">
+					<a href="#">Mention légales</a>
+				</div>
+				<div  class="links__item">
+					<a href="mailto:contact@ohmyfood.com">Contact</a>
+				</div>	
+			</div>		
+
+	</footer>
+
+</body>
+</html>
