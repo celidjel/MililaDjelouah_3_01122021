@@ -1,0 +1,27 @@
+@mixin button-lightness($color1, $color2){
+    $colour1: lighten($color1, 10%); 
+    $colour2: lighten($color2, 10%);
+
+   background:  linear-gradient($colour1, $colour2);
+}
+
+@mixin boxing-shadow($colour){
+    box-shadow: 2px 2px 10px $colour;
+}
+
+@mixin principal-button{
+    background: linear-gradient($primary, $secondary);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 10px 5px;
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+    text-align: center;
+        &:hover{
+            @include button-lightness($primary, $secondary);
+            @include boxing-shadow(#D5D5D5); 
+        }
+}
+
