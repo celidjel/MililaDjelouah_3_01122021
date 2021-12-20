@@ -1,7 +1,6 @@
 # MililaDjelouah_3_01122021
 Formation développeur web Openclassrooms - Projet 3 - Site mobile omyfood
 
-Livrables attendus :
 
 🟣 Contenu des pages
 
@@ -27,8 +26,7 @@ Les effets accessibles au clic ou au survol sont visibles sur la maquette. Ils d
 les animations ou transitions CSS, pas de JavaScript ni de librairie.
 
 Boutons
-● Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir.
-L’ombre portée devra également être plus visible.
+● Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir. L’ombre portée devra également être plus visible.
 ● À terme, les visiteurs pourront sauvegarder leurs menus préférés. Pour ça, un bouton "J’aime" en forme de cœur est présent sur la maquette. Au clic, il devra se
 remplir progressivement. Pour cette première version, l’effet peut être apparaître au survol sur desktop au lieu du clic.
 
