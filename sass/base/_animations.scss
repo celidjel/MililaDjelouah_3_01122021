@@ -1,0 +1,256 @@
+.tilt-in-top-1 {
+	-webkit-animation: tilt-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: tilt-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.tilt-in-top-2{
+	-webkit-animation: tilt-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: tilt-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation-delay: 0.5s;
+}
+.tilt-in-top-3{
+	-webkit-animation: tilt-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: tilt-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation-delay: 1s;
+}
+
+.loader{  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    opacity: 0.9;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;    
+    margin: auto;
+    animation: cacher 1.0s forwards;    
+    animation-delay: 3s;
+    -webkit-animation: cacher 1s ease-out both;   
+    -webkit-animation-delay: 3s;
+        .circle{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;          
+            position: absolute;            
+            animation: spin 1s ease-in-out infinite;
+                &:nth-child(1){
+                    border-top: 2px solid $primary;
+                }
+
+                &:nth-child(2){
+                    border-bottom: 2px solid $secondary;
+                    width: 120px;
+                    height: 120px;
+                }
+
+                &:nth-child(3){
+                    border-left: 2px solid $tertiary;
+                    width: 180px;
+                    height: 180px;
+                }
+        }
+}
+
+.description__coeur{
+    margin: 0px 20px 20px 0px;
+    fill: transparent;
+    stroke: black;
+    stroke-width: 20;
+    cursor: pointer;
+    position: relative;
+        svg{
+            overflow: visible;
+            width: 30px;
+                path {
+                    stroke-dashoffset: 0;
+                    stroke-dasharray: 1550;
+                    transform-origin: center;
+                }
+        }
+
+        .coeur-background{
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            stroke: none;
+        }
+
+        .coeur-main{
+            &:hover path{
+                animation: coeur-animation 2s ease-in-out forwards;
+            }            
+        }  
+        
+        &--menu{
+            margin-bottom: 0px;
+        }
+}  
+
+.main{   
+    .menu{
+          &__entree, &__plat, &__dessert{                
+                    .plat{                                                       
+                        &:hover .slide-left{                                    
+                            transition: 1s;
+                            right: 0;  
+                            margin-right: 0px !important;
+                                .rotate-center{
+                                    -webkit-animation: rotate-center 0.6s ease-in-out both;
+                                    animation: rotate-center 0.6s ease-in-out both;
+                                }                                                  
+                        }                                            
+                        
+                        .slide-left {                             
+                            right: -70px;                    
+                            width: 50px;
+                            margin-right: -70px;
+                            height: 45px;
+                            background-color: $tertiary;                       
+                            border-radius: 0 20px 20px 0;
+                            align-self: center;                                                  
+                            padding: 15px 10px; 
+                            transition: 1s; 
+                                .check{
+                                    padding: 10px;
+                                    font-size: 20px;
+                                    color: white;
+                                    background: $tertiary;                                    
+                                 }                         
+                         }
+                    }                    
+            }
+    }     
+}
+
+// Keyframes
+
+// animation plats
+@-webkit-keyframes tilt-in-top{
+    0% {
+      -webkit-transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+              transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+              transform: rotateY(0deg) translateY(0) skewY(0deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes tilt-in-top{
+    0% {
+      -webkit-transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+              transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+              transform: rotateY(0deg) translateY(0) skewY(0deg);
+      opacity: 1;
+    }
+  }
+
+// Loader spinner
+  @-webkit-keyframes spin{
+    from{transform: rotate(0deg)}
+    to{transform: rotate(720deg)}
+}
+
+@keyframes spin{
+    from{transform: rotate(0deg)}
+    to{transform: rotate(720deg)}
+}
+
+@-webkit-keyframes cacher {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0; 
+      z-index: -1;            
+    }
+  }
+  @keyframes cacher {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;            
+      z-index: -1;
+    }
+  } 
+
+  @-webkit-keyframes montrer {
+    0% {
+      opacity: 0.4;
+    }    
+    100%{
+      opacity: 1;  
+      background: white;  
+      pointer-events: all;
+    }
+  }
+
+  @keyframes montrer {
+    0% {
+      opacity: 0.4;
+    }    
+    100%{
+      opacity: 1; 
+      background: white;  
+      pointer-events: all;   
+    }
+  }
+
+// animation coeur
+@keyframes coeur-animation {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    30% {
+      stroke-dashoffset: 1550;
+    }
+    60% {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: $primary;
+      stroke: $primary;
+      transform: scale(1.1);
+    }
+    90% {
+      transform: scale(1);
+    }
+    100% {
+      stroke-dashoffset: 3100;
+      fill: $secondary;
+      stroke: $secondary;
+    }
+  }
+
+  // animation plat prix - slide left
+  @-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }  

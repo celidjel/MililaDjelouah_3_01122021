@@ -1,0 +1,11 @@
+.informations__restaurant{
+    .explorer{
+        @include principal-button();
+    }
+}
+
+.main__content{
+    .commander{
+        @include principal-button();
+    } 
+}

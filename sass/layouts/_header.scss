@@ -1,0 +1,21 @@
+.logo{
+    text-align: center;   
+    padding: 10px; 
+    z-index: 1;
+        img{
+            width: 160px;
+        }
+}
+
+.restaurant-header{
+    display: flex;
+    align-items: center;
+        .back{
+            font-size: 24px;
+            margin-left: 30px;
+            width: 15%;
+        }
+        &--logo{
+            width: 55%;
+        }
+}
